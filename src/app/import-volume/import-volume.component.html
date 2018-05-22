@@ -1,0 +1,85 @@
+
+
+<div class="divImport">
+
+  <div class="navSelectTrade">
+      <h4 class="selectTrade">Select Trade</h4>
+  </div>
+
+  <kendo-buttongroup class="selectGroupButton" [selection]="'single'">
+    <button class="selectGroupItem" kendoButton [togglable]="true" (click)="showExport()">Export</button>
+    <button class="selectGroupItem" kendoButton [togglable]="true" [primary]="true">Import</button>
+    <button class="selectGroupItem" kendoButton [togglable]="true" >Total Trade</button>
+  </kendo-buttongroup>
+
+  <!-- SELECT REPORT TEXT -->
+  <div class="navSelectReport">
+      <h4 class="selectReport">Select Report</h4>
+  </div>
+      
+  <div>
+    <kendo-combobox class="dropDownReport" [data]="volumes" [placeholder]="'Import Volume'">
+    </kendo-combobox>
+  </div>
+
+<!-- FILTERS -->
+  <div class="navFilters">
+    <h4 class="filters">Filters</h4>
+  </div>
+
+  <div> 
+    <kendo-datepicker [value]="value" class="datePicker1"></kendo-datepicker>
+    <span class="textTO">to</span>
+    <kendo-datepicker [value]="value" class="datePicker2"></kendo-datepicker>
+  </div>
+  
+  <!-- SELECT COUNTRY -->
+  <div class="navSelectCountry">
+      <h4 class="selectcountry">Select Country</h4>
+  </div>
+
+  <div>
+    <kendo-combobox class="dropDownSelectCountry" [data]="countries" [placeholder]="'Countries/s'">
+    </kendo-combobox>
+  </div>
+
+  <!-- MONTH -->
+  <div class="navMonth">
+    <h4 class="month">Month</h4>
+  </div>
+
+  <div>
+    <kendo-combobox class="dropDownMonth" [data]="months" [placeholder]="'Select Month/s'">
+    </kendo-combobox>
+  </div>
+
+  <!-- QUARTER -->
+  <div class="navQuarter">
+    <h4 class="quarter">Quarter</h4>
+  </div>
+
+  <div>
+    <kendo-combobox class="dropDownQuarter" [data]="quarters" [placeholder]="'Select Quarter/s'">
+    </kendo-combobox>
+  </div>
+
+  <!-- SELECT PRODUCT DESCRIPTION -->
+  <div class="navSelectProductDesc">
+    <h4 class="selectproductdesc">Select Product Description</h4>
+  </div>
+
+  <div>
+    <kendo-combobox class="dropDownSelectProductDesc" [data]="productDescs" [placeholder]="'Select Product Desc/s'">
+    </kendo-combobox>
+  </div>
+
+  <!-- RESET  -->
+  <div class="resetLink">
+    <a class="reset" href="#" style="margin-right: 10px;">Reset</a>
+
+    <button kendoButton (click)="onButtonClick()" class="applyFilter">Apply Filter</button>
+  </div>
+  
+</div>
+
+

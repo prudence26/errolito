@@ -1,0 +1,169 @@
+<div style = 'overflow-x:hidden;'>
+
+    <nav class = "navbar navbar-expand-lg">  
+      <div class = "top">
+        <p class = "head">Trade Statistics</p>
+      </div>
+    </nav>
+  
+    <div class="body">
+      <div class='row'>
+<!-- ============================== LEFT PANE ==============================       --> 
+<div class='col-md-3 leftPane'>
+
+  <div class="navSelectTrade" >
+    <h4 class="selectTrade">Select Trade</h4>
+  </div>
+
+  <!-- SELECT GROUP BUTTON -->
+  <kendo-buttongroup class="selectGroupButton" [selection]="'single'">
+    <button class="selectGroupItem" kendoButton [togglable]="true" [primary]="true">Export</button>
+    <button class="selectGroupItem" kendoButton [togglable]="true" >Import</button>
+    <button class="selectGroupItem" kendoButton [togglable]="true" >Total Trade</button>
+  </kendo-buttongroup>
+<!-- SELECT REPORT TEXT -->
+<div class="navSelectReport">
+    <h4 class="selectReport">Select Report</h4>
+</div>
+    
+<div>
+  <kendo-combobox class="dropDownReport" [data]="reportItems" [placeholder]="'Market and Product Grouping'">
+  </kendo-combobox>
+</div>
+
+<!-- FILTERS -->
+<div class="navFilters">
+    <h4 class="filters">Filters</h4>
+  </div>
+  
+  <div> 
+    <kendo-datepicker [value]="value" class="datePicker1"></kendo-datepicker>
+    <span class="textTO">to</span>
+    <kendo-datepicker [value]="value" class="datePicker2"></kendo-datepicker>
+  </div>
+  
+  
+  <!-- MONTH -->
+  <div class="navMonth">
+      <h4 class="month">Month</h4>
+  </div>
+  
+  <div>
+    <kendo-combobox class="dropDownMonth" [data]="months" [placeholder]="'Select Month/s'">
+    </kendo-combobox>
+  </div>
+
+  <!-- QUARTER -->
+<div class="navQuarter">
+    <h4 class="quarter">Quarter</h4>
+</div>
+
+<div>
+  <kendo-combobox class="dropDownQuarter" [data]="quarters" [placeholder]="'Select Quarter/s'">
+  </kendo-combobox>
+</div>
+
+<!-- SELECT COUNTRY -->
+<div class="navSelectCountry">
+    <h4 class="selectcountry">Select Country</h4>
+</div>
+
+<div>
+  <kendo-combobox class="dropDownSelectCountry" [data]="countries" [placeholder]="'Countries/s'">
+  </kendo-combobox>
+</div>
+
+<!-- RESET  -->
+<div class="resetLink">
+    <a class="reset" href="#" style="margin-right: 10px;">Reset</a>
+  
+    <button kendoButton (click)="onButtonClick()" class="applyFilter">Apply Filter</button>
+  </div>
+
+
+</div>
+<!-- END OF LEFT PANE -->
+
+<!-- ============================== MIDDLE PANE ================================== -->
+<div class='col-md-6 midPane' >
+
+  
+    <div class="navexportVolume">
+        <h4 class="exportVolume">Market and Product Grouping</h4>
+    </div>
+  
+    <kendo-tabstrip class="tab">
+        <kendo-tabstrip-tab [title]="'Graph'" [selected]="true">
+          <ng-template kendoTabContent>
+  
+  
+        <div>
+            <kendo-combobox class="dropdownChart" [data]="charts" [placeholder]="'Select Chart'">
+            </kendo-combobox>
+        </div>
+  
+        <div>
+            <img class="dtiLogo" src="http://www.edc.net.ph/wp-content/uploads/2017/06/official-EMB-DTI-Logo-colored-1-300x175.png">
+            <span class="sideLogoText">Philippine Merchandise Export to the World in (is US$) Market and Product Grouping</span>
+            <!-- <span class="sideLogoText2">Regional Bloc and Product Code</span> -->
+        </div>  
+  
+  
+          </ng-template>
+        </kendo-tabstrip-tab>
+        <kendo-tabstrip-tab [title]="'Table'">
+          <ng-template kendoTabContent>
+            <p>
+            Test2
+            </p>
+          </ng-template>
+        </kendo-tabstrip-tab>
+        <!-- <kendo-tabstrip-tab [title]="'Football'">
+          <ng-template kendoTabContent>
+            <p>
+             Test3
+            </p>
+          </ng-template>
+        </kendo-tabstrip-tab> -->
+      </kendo-tabstrip>
+  
+  </div>
+    <!-- ============================== END OF MIDDLE PANE =========================== -->
+  
+   <!-- ============================== RIGHT PANE ==================================== -->
+   <div class='col-md-3 rightPane' >
+    
+      <div class="navQuickStats">
+          <h4 class="quickStats">Quick Stats</h4>
+      </div>
+  
+      <div>
+        <kendo-combobox class="dropDownExport" [data]="exports" [placeholder]="'Export'">
+        </kendo-combobox>
+      </div>
+  
+      <div class="box">
+          <div class="boxItem1">
+            <a href="#">Top 10 Export</a>
+          </div>
+          <div class="boxItem2">
+            <a href="#">Top 10 Countries</a>
+          </div>
+      </div>
+  
+        <div>
+            <kendo-combobox class="dropDownImport" [data]="imports" [placeholder]="'Import'">
+            </kendo-combobox>
+        </div>
+  
+        <div>
+            <kendo-combobox class="dropDownTotalTrade" [data]="totalTrades" [placeholder]="'Total Trade'">
+            </kendo-combobox>
+        </div>
+  
+  </div>
+  <!-- ============================== END OF RIGHT PANE ============================= -->
+
+
+      </div>
+    </div>
